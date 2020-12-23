@@ -1,0 +1,26 @@
+{
+  "name": "qapi/project",
+  "description": "QApi多版本接口开发框架。",
+  "license": "MIT",
+  "type": "project",
+  "keywords": ["QApi","Framework","QApi example-project"],
+  "scripts": {
+    "serve": "@php -S 0.0.0.0:8889 -t public vendor/qapi/framework/src/Route/router.php"
+  },
+  "authors": [
+    {
+      "name": "潘高峰",
+      "email": "228375325@qq.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "qapi/framework": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "App",
+      "Model\\": "Model"
+    }
+  }
+}
