@@ -5,7 +5,6 @@ require getcwd() . DIRECTORY_SEPARATOR . "server.php";
 $http = new Swoole\Http\Server("127.0.0.1", $argv[1] ?? 9501);
 
 $http->on("start", function ($server) use ($argv) {
-    print_r(__DIR__);
     echo "Swoole http server is started at http://127.0.0.1:" . ($argv[1] ?? 9501)."\n";
 });
 
