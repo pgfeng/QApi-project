@@ -2,4 +2,4 @@
 require dirname(__DIR__) . DIRECTORY_SEPARATOR . "server.php";
 
 
-\QApi\App::run();
+echo \QApi\App::run();
