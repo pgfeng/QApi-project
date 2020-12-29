@@ -6,7 +6,8 @@
   "keywords": ["QApi","Framework","QApi example-project"],
   "scripts": {
     "serve": "@php -S 0.0.0.0:8889 -t public vendor/qapi/framework/src/Route/router.php",
-    "build": "./build"
+    "build": "@php build",
+    "swoole": "php public/swoole"
   },
   "authors": [
     {
