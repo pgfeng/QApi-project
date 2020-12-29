@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+require getcwd() . DIRECTORY_SEPARATOR . "vendor/autoload.php";
+
+$http = new Swoole\Http\Server("127.0.0.1", $argv[1] ?? 9501);
+
+$http->on("start", function ($server) use ($argv) {
+    echo "Swoole http server is started at http://127.0.0.1:" . ($argv[1] ?? 9501)."\n";
+});
+
+$http->on("request", function ($request, $response) {
+    $_SERVER = $request->server;
+    $_SERVER['DOCUMENT_ROOT'] = __DIR__;
+    foreach ($request->server as $key => $item) {
+        $_SERVER[strtoupper($key)] = $item;
+    }
+    $_SERVER['SERVER_NAME'] = $request->server['remote_addr'];
+    foreach ($request->header as $key => $item) {
+        $_SERVER['HTTP_' . strtoupper($key)] = $item;
+    }
+    print_r(PHP_SAPI);
+    $response->setHeader('X', '123');
+    try {
+        $response->end(\QApi\App::run());
+    } catch (RuntimeException $e) {
+        error_log(get_class($e) . '：' . $e->getMessage() . ' in ' . $e->getFile() . ' on line ' . $e->getLine());
+        $response->end((new \QApi\Response())->setCode(500)->setMsg($e->getMessage())->setExtra([
+
+        ])->fail());
+    }
+});
+
+$http->start();
