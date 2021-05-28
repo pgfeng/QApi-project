@@ -5,7 +5,6 @@
 *.ipr
 *.iws
 .idea/
-.document/
 # Visual Studio Code related
 .vscode/
 
