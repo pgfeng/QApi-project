@@ -2,6 +2,6 @@
 <?php
 define('PROJECT_PATH',getcwd().DIRECTORY_SEPARATOR);
 require 'vendor/autoload.php';
-define('DEV_MODE',true);
+define('DEV_MODE',false);
 $Command = new \QApi\Command();
 $Command->execute();
