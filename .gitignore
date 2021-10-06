@@ -8,7 +8,6 @@
 # Visual Studio Code related
 .vscode/
 
-
 # MAC OS
 .DS_Store
 
@@ -19,3 +18,4 @@ composer.lock
 
 # Framework
 /runtime
+/routes
