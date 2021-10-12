@@ -1,7 +1,10 @@
 #!/usr/bin/env php
 <?php
+
+use QApi\Enumeration\RunMode;
+
 define('PROJECT_PATH',getcwd().DIRECTORY_SEPARATOR);
 require 'vendor/autoload.php';
-define('DEV_MODE',false);
+define('RUN_MODE', RunMode::PRODUCTION);
 $Command = new \QApi\Command();
 $Command->execute();
