@@ -23,4 +23,4 @@ package.lock
 
 # Framework
 /runtime
-/routes
+/routes/*/*/builder.php
