@@ -8,7 +8,7 @@
     "serve": "@php console run",
     "console": "@php console",
     "console-prod": "@php console-prod",
-    "swoole": "php public/swoole"
+    "swoole": "php console run:swoole"
   },
   "authors": [
     {
