@@ -5,10 +5,22 @@
   "type": "project",
   "keywords": ["QApi","Framework","QApi example-project"],
   "scripts": {
-    "serve": "@php console run",
-    "console": "@php console",
-    "console-prod": "@php console-prod",
-    "swoole": "php console run:swoole"
+    "serve": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php console run"
+    ],
+    "console": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php console"
+    ],
+    "console-prod": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php console-prod"
+    ],
+    "swoole": [
+      "Composer\\Config::disableProcessTimeout",
+      "@php public/swoole"
+    ]
   },
   "authors": [
     {
